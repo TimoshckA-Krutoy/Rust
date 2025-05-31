@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Форма для клана Rust</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Выбери опцию</h2>
+      <select id="mainSelect" onchange="switchSection()">
+        <option value="farm">Фарм</option>
+        <option value="clan">Вступление в клан</option>
+        <option value="stock">Склад</option>
+      </select>
+
+      <!-- Фарм -->
+      <div id="farm" class="section">
+        <h2>Фарм</h2>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="farmType" value="Камень" />
+          Камень
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="farmType" value="Сера" />
+          Сера
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="farmType" value="Металл" />
+          Металл
+        </label>
+
+        <label class="input_ds_st">
+          Сколько нафармил (только цифры):
+          <input type="text" id="farmAmount" />
+          <input type="text" id="farmDiscord" placeholder="Ник в Discord" />
+          <input type="text" id="farmSteam" placeholder="Ник в Steam" />
+        </label>
+      </div>
+
+      <!-- Вступление в клан -->
+      <div id="clan" class="section" style="display: none">
+        <h2>Вступление в клан</h2>
+        <label>Кем хочешь быть?</label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="role" value="Электрик" />
+          Электрик
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="role" value="Фармила" />
+          Фармила
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="role" value="Файтер" />
+          Файтер
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="role" value="Билдер" />
+          Билдер
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="role" value="Склад" />
+          Склад
+        </label>
+
+        <label>Ответственность:</label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="duty" value="Ст.Модер" />
+          Ст.Модер
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="duty" value="Модер" />
+          Модер
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="duty" value="Админ" />
+          Админ
+        </label>
+
+        <input type="text" id="clanDiscord" placeholder="Ник в Discord" />
+        <input type="text" id="clanSteam" placeholder="Ник в Steam" />
+      </div>
+
+      <!-- Склад -->
+      <div id="stock" class="section" style="display: none">
+        <h2>Склад</h2>
+        <input type="text" id="stockDiscord" placeholder="Ник в Discord" />
+        <input type="text" id="stockSteam" placeholder="Ник в Steam" />
+        <textarea id="stockText" placeholder="Что по складу?"></textarea>
+      </div>
+
+      <button class="btn" id="submitBtn" onclick="submitForm()">
+        Отправить
+      </button>
+      <p id="cooldownMsg" style="color: red"></p>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
